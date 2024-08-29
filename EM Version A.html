@@ -34,6 +34,11 @@
         margin: 0;
       }
 
+      .logo-img {
+        max-width: 200px;
+        height: auto;
+      }
+
       /* Utility Classes */
       .flex-row {
         flex-direction: row;
@@ -144,7 +149,7 @@
         font-size: 35px;
       }
 
-      .teext-primary-30 {
+      .text-primary-30 {
         font-size: 30px;
         color: var(--primary-color);
       }
@@ -212,10 +217,14 @@
         position: relative;
       }
 
-      .container .inner.flex-column.align-center div {
+      .recipient-name {
         padding: 30px 150px;
         border: 1px solid var(--primary-color);
         border-radius: 50px;
+      }
+
+      .recipient-name p {
+        text-align: center;
       }
 
       .container .inner.flex-column.align-center p.text-primary-20.text-center {
@@ -234,10 +243,14 @@
       .section-1 {
         padding-top: 50px;
         background-color: var(--primary-color);
-        background-image: url("img/clouds.png");
-        background-size: 100% auto;
-        background-position: bottom center;
-        background-repeat: no-repeat;
+      }
+
+      .section-1 .clouds {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
       }
 
       .section-1 .col.flex-column.width-60 {
@@ -261,10 +274,12 @@
       .section-4 {
         padding-top: 100px;
         background-color: var(--primary-color);
-        background-image: url(img/cloud-top.png);
-        background-size: contain;
-        background-position: top center;
-        background-repeat: repeat-x;
+      }
+
+      .section-4 .clouds {
+        position: absolute;
+        width: 100%;
+        top: 0;
       }
 
       .section-4 .col.flex-column.width-60.justify-center {
@@ -280,10 +295,17 @@
 
       .section-5 {
         padding-top: 100px;
-        background-image: url("img/Mask Group 14.png");
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
+      }
+
+      .section-5 .clouds {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        object-fit: cover;
       }
 
       .section-5 .inner {
@@ -321,8 +343,16 @@
       .logo-container {
         display: flex;
         gap: 50px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         margin-bottom: 30px;
+      }
+
+      .logo-container img {
+        width: auto; /* Ensures width adapts based on image's original ratio */
+        height: auto; /* Maintains the aspect ratio */
+        max-width: 48%; /* Prevents the images from being too large */
+        max-height: 100%;
+        object-fit: contain;
       }
 
       .img-full {
@@ -334,10 +364,125 @@
       li:not(:last-child) {
         margin-bottom: 20px;
       }
+
+      @media (max-width: 500px) {
+        .logo-container {
+          gap: 20px;
+          justify-content: center;
+        }
+
+        .logo-container img:last-child {
+          height: 50px;
+        }
+
+        .section-1 .inner {
+          flex-direction: column-reverse;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .container {
+          padding: 30px;
+          flex-wrap: wrap;
+        }
+
+        .container .inner {
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+
+        .col {
+          width: 100% !important;
+        }
+
+        .section-1 h2 {
+          text-align: center;
+        }
+
+        .text-bold-secondary-35 {
+          font-size: 25px;
+        }
+
+        .text-bold-accent-50 {
+          font-size: 40px;
+        }
+
+        .text-35 {
+          font-size: 25px;
+        }
+
+        .text-bold-primary-40 {
+          font-size: 35px;
+        }
+
+        .section-2 img {
+          width: auto;
+          height: auto;
+          max-width: 48%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+
+        .section-2:after {
+          height: 100px;
+        }
+
+        .recipient-name {
+          padding: 20px 50px;
+          max-width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+        }
+
+        .text-primary-30 {
+          font-size: 25px;
+        }
+
+        .img-full {
+          max-width: 250px;
+        }
+
+        .section-4 .inner {
+          flex-direction: column;
+        }
+
+        .section-4 h2,
+        .section-4 h3 {
+          text-align: center;
+        }
+
+        .section-4 .inner .col {
+          align-items: center;
+        }
+
+        .text-accent-35 {
+          font-size: 30px;
+        }
+
+        .text-bold-secondary-40 {
+          font-size: 35px;
+        }
+
+        .section-5 .inner {
+          padding: 30px;
+          border-radius: 30px;
+        }
+
+        .section-5 img {
+          position: relative;
+        }
+
+        .section-5 .col:first-child {
+          margin-bottom: -100px;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="container section-1">
+      <img class="clouds" src="img/clouds.png" alt="" />
       <div class="inner">
         <div class="col width-40 justify-center">
           <img
@@ -367,9 +512,9 @@
         <img src="img/Mask Group 13.png" alt="" />
       </div>
     </div>
-    <div class="container">
+    <div class="container section 3">
       <div class="inner flex-column align-center">
-        <div>
+        <div class="recipient-name">
           <p class="text-primary-30">Recipient's Name</p>
         </div>
         <p class="text-primary-20 text-center">
@@ -433,6 +578,7 @@
       </div>
     </div>
     <div class="container section-4">
+      <img src="img/cloud-top.png" class="clouds" alt="" />
       <div class="inner">
         <div class="col width-40 justify-center">
           <img
@@ -449,9 +595,10 @@
           <img src="img/QR.png" alt="" width="150" height="150" />
         </div>
       </div>
-      <img class="cloud-decor" src="img/cloud-single.svg" alt="" />
+      <img class="cloud-decor" src="img/cloud-single.png" alt="" />
     </div>
     <div class="container section-5">
+      <img class="clouds" src="img/Mask Group 14.png" alt="" />
       <div class="inner">
         <div class="col width-70">
           <h2 class="text-bold-secondary-40">
