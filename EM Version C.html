@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EM Version B</title>
+    <title>EM Version C</title>
     <link
       href="https://fonts.cdnfonts.com/css/tw-cen-mt-std"
       rel="stylesheet"
@@ -244,10 +244,6 @@
         text-align: center;
       }
 
-      .container .inner.flex-column.align-center p.text-primary-20.text-center {
-        max-width: 800px;
-      }
-
       .container ul {
         max-width: 700px;
       }
@@ -286,7 +282,13 @@
       }
 
       .list-card-container {
-        column-count: 2;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 30px;
+      }
+
+      .list-card-container > div {
+        width: 50%;
       }
 
       .card {
@@ -335,9 +337,7 @@
 
       .pain-points-card {
         padding: 50px;
-        background-color: var(--accent-color);
         border: none;
-        border-radius: 30px;
         display: flex;
       }
 
@@ -367,6 +367,12 @@
       .text-bold-secondary-25 {
         font-weight: bold;
         font-size: 25px;
+        color: var(--secondary-color);
+      }
+
+      .text-bold-secondary-50 {
+        font-weight: bold;
+        font-size: 50px;
         color: var(--secondary-color);
       }
 
@@ -410,12 +416,22 @@
         gap: 20px;
       }
 
-      .section-3 {
-        border-bottom: 10px solid var(--accent-color);
+      .section-4 .closing {
+        margin-bottom: -15px;
       }
 
-      .section-3 .closing {
-        margin-bottom: -15px;
+      .section-4 {
+        padding-bottom: 100px;
+      }
+
+      .section-4 .btm-img {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .section-4 p {
+        max-width: 400px;
       }
 
       @media (max-width: 500px) {
@@ -451,8 +467,17 @@
           font-size: 25px;
         }
 
+        .pain-points-card {
+          padding: 30px;
+        }
+
         .list-card-container {
-          column-count: 1;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+
+        .list-card-container > div {
+          width: 100%;
         }
 
         .list-card-container li {
@@ -469,6 +494,10 @@
 
         .text-bold-secondary-40 {
           font-size: 35px;
+        }
+
+        .text-bold-secondary-50 {
+          font-size: 40px;
         }
 
         .solutions-card {
@@ -490,19 +519,30 @@
         .mb-100 {
           margin-bottom: 50px;
         }
+
+        .section-4 {
+          padding: 50px 30px;
+        }
+
+        .section-3 {
+          padding-bottom: 30px;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container section-1">
-      <img class="clouds" src="img/clouds.png" alt="" />
+      <img class="clouds" src="img/c hero.png" alt="" />
       <div class="inner flex-column align-center">
         <img class="logo-img" src="img/expertguru_logo-01.png" alt="" />
-        <h2 class="text-bold-secondary-30 text-center">
-          Meet Your New AI Personal Shopper:
+        <h2
+          class="text-bold-secondary-30 text-center"
+          style="margin-bottom: -10px"
+        >
+          Your E-commerce Sidekick is Here:
         </h2>
         <h2 class="text-bold-accent-50 text-center" style="max-width: 550px">
-          Transform Your E-commerce Business with ExpertGuru!
+          Meet ExpertGuru, the AI Personal Shopper!
         </h2>
       </div>
     </div>
@@ -512,40 +552,55 @@
         <div class="recipient-name mb-50">
           <p class="text-primary-30">Recipient's Name</p>
         </div>
-        <p class="text-primary-20 text-center width-80 mb-50">
-          Imagine walking into a store where a personal shopper knows your
-          preferences, anticipates your needs, and guides you to the perfect
-          products—without any effort on your part. Now, envision that
-          experience online with ExpertGuru, the AI Personal Shopper designed to
-          elevate your e-commerce business! With ExpertGuru, your customers can
-          navigate your website effortlessly, ensuring they find exactly what
-          they’re looking for while enjoying a personalized shopping journey.
+        <p class="text-primary-20 text-center width-80 mb-30">
+          Ever wish you had a personal shopper who knew your customers'
+          preferences better than they do? Imagine walking into a store where a
+          savvy shopper guides you to the perfect products—without you even
+          breaking a sweat! Now, imagine that magical experience online with
+          ExpertGuru, your trusty AI Personal Shopper designed to elevate your
+          e-commerce game!
         </p>
         <div class="pain-points-card text-center align-center flex-column">
-          <img class="clouds" src="img/Path 238.png" alt="" />
           <h2
             class="text-bold-primary-30"
             style="max-width: 300px; margin-bottom: 30px"
           >
-            Are You Facing These Common Pain Points?
+            Are You Struggling with These Common Retail Woes?
           </h2>
           <div class="list-card-container">
-            <ul>
-              <li>Low Conversion Rates</li>
-              <p>Struggling to turn visitors into buyers?</p>
-              <li>Limited Insights</li>
-              <p>
-                Do you wish you could better understand your customers' needs?
-              </p>
-              <li>High Bounce Rates</li>
-              <p>Are visitors leaving your site without engaging?</p>
-              <li>Customer Retention Challenges</li>
-              <p>Is it hard to keep customers coming back for more?</p>
-              <li>SEO Struggles</li>
-              <p>
-                Finding it difficult to improve your search engine visibility?
-              </p>
-            </ul>
+            <div>
+              <ul>
+                <li>Low Conversion Rates</li>
+                <p>
+                  Your website is busier than a crowded mall, but no one’s
+                  checking out!
+                </p>
+                <li>Customer Retention Challenges</li>
+                <p>
+                  It feels like your customers ghost you after their first
+                  purchase.
+                </p>
+                <li>Limited Insights</li>
+                <p>
+                  Trying to understand your customers is like solving a Rubik's
+                  cube—blindfolded.
+                </p>
+              </ul>
+            </div>
+
+            <div>
+              <ul>
+                <li>High Bounce Rates</li>
+                <p>
+                  Visitors come and go faster than a flash sale on Black Friday.
+                </p>
+                <li>SEO Struggles</li>
+                <p>
+                  Your search engine visibility is lower than your Wi-Fi signal
+                  during a storm.
+                </p>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -553,31 +608,31 @@
     <div class="container section-3 bg-primary">
       <img src="img/cloud-top.png" class="clouds" alt="" />
       <div class="inner flex-column align-center justify-center text-secondary">
-        <h2 class="text-center text-bold-secondary-40">
-          <span class="text-bold-secondary-25">Introducing ExpertGuru: </span
-          ><br />
-          Ultimate Solution!
+        <h2 class="text-center text-bold-secondary-50" style="max-width: 500px">
+          <span class="text-bold-secondary-25">Enter ExpertGuru: </span><br />
+          Your E-commerce Superhero!
         </h2>
-        <p class="text-center text-secondary-20 mb-50">
-          ExpertGuru is here to tackle these pain points head-on, providing an
-          array of powerful features designed to enhance your e-commerce
-          experience:
+        <p class="text-center text-secondary-20 mb-30">
+          ExpertGuru swoops in to save the day, tackling those pesky pain points
+          with a powerful array of features:
         </p>
-        <div class="solutions-list flex mb-100">
+        <div class="solutions-list flex mb-50">
           <div class="solutions-card">
             <ul>
               <li>Effortless Integration</li>
             </ul>
-            <p>Get up and running in minutes—no tech skills required!</p>
+            <p>
+              Setting up ExpertGuru is easier than finding your car keys—no tech
+              skills required!
+            </p>
           </div>
           <div class="solutions-card">
             <ul>
               <li>Valuable Customer Insights</li>
             </ul>
             <p>
-              Gain essential insights into your customers' preferences—90% of
-              businesses consider AI chatbots crucial for this (Capgemini
-              Research Institute).
+              Get the inside scoop on your customers. 90% of businesses say AI
+              chatbots are key to this (Capgemini Research Institute).
             </p>
           </div>
           <div class="solutions-card">
@@ -586,8 +641,8 @@
             </ul>
 
             <p>
-              Drive conversion rates up by an incredible 915% with tailored
-              product suggestions (Dynamic Yield).
+              Boost your conversion rates by an astonishing 915% with product
+              suggestions that feel like magic (Dynamic Yield).
             </p>
           </div>
           <div class="solutions-card">
@@ -595,7 +650,7 @@
               <li>Improved User Engagement</li>
             </ul>
             <p>
-              Experience an 80% increase in engagement with AI chatbots
+              Watch user engagement soar by 80% as our chatbots work their charm
               (Business Insider).
             </p>
           </div>
@@ -604,30 +659,37 @@
               <li>Enhanced Customer Loyalty</li>
             </ul>
             <p>
-              Enjoy a 74% boost in customer retention with AI-driven
-              personalization (Accenture).
+              Turn one-time buyers into repeat customers with a 74% increase in
+              loyalty thanks to our AI wizardry (Accenture).
             </p>
           </div>
           <div class="solutions-card">
             <ul>
               <li>Cost Savings</li>
             </ul>
-            <p>Save over $8 billion annually with chatbot technology.</p>
+            <p>
+              Save over $8 billion annually with the financial power of
+              chatbots.
+            </p>
           </div>
         </div>
-        <p class="text-center text-secondary-20">
-          Don’t miss the opportunity to bring the personal shopping experience
-          to your e-commerce store!
+      </div>
+    </div>
+    <div class="container section-4 bg-accent">
+      <img class="btm-img" src="img/bottom c.png" alt="" />
+      <div class="inner flex-column align-center">
+        <p class="text-center text-primary-20">
+          Don’t let your e-commerce business stay in the slow lane!
         </p>
-        <p class="text-center text-secondary-20">
-          Book an appointment with us today to explore how ExpertGuru can solve
-          your business challenges or to schedule a demo.
+        <p class="text-center text-primary-20">
+          Book an appointment with us today to see how ExpertGuru can zap your
+          business challenges or schedule a demo.
         </p>
-        <p class="text-center text-secondary-20 mb-30">
-          Looking forward to helping you transform your business!
+        <p class="text-center text-primary-20 mb-30">
+          We can’t wait to help you level up!
         </p>
-        <p class="text-center text-accent-20 closing">Best regards,</p>
-        <p class="text-center text-bold-accent-30">The ExpertGuru Team</p>
+        <p class="text-center text-primary-20 closing">Best regards,</p>
+        <p class="text-center text-bold-primary-30">The ExpertGuru Team</p>
       </div>
     </div>
   </body>
